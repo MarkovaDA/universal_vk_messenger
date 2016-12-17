@@ -1,0 +1,47 @@
+.simple_href{
+    font-size: 1.5em;
+    color:darkorange;
+}
+.simple_href:hover{
+    text-decoration:underline;
+    color:darkorange;
+}
+.preview_img{
+    width: 150px !important;
+}
+.select_segment{
+    border: 1px solid #ff6800;
+    border-radius: 2px;
+    margin:0px auto;
+    width: 90%;
+    padding: 10px;
+    font-size: 1.2em;
+}
+.orange_top{
+    border-top: 3px solid darkorange !important;
+}
+.item{
+    color: #242424 !important;
+}
+textarea{
+    border: 1px solid lightgrey;
+}
+textarea:hover{
+    border: none;
+    box-shadow: 0px 0px 3px grey;
+}
+textarea:focus { 
+    outline: none !important;
+}
+.violet_href{
+    font-size: 1.1em !important; 
+    color: #4f20b5;
+    cursor:pointer;
+}
+.violet_href:hover{
+    color: #4f20b5;
+    text-decoration: underline;               
+}
+ input:focus{
+    border: 1px solid #4f20b5 !important;
+ }
