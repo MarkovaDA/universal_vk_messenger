@@ -7,8 +7,10 @@ com/websystique/springsecurity/service/VKApiService.class
 com/websystique/springsecurity/service/UserServiceImpl.class
 com/websystique/springsecurity/controller/MainController.class
 com/websystique/springsecurity/model/User.class
+com/websystique/springsecurity/tasks/Task.class
 com/websystique/springsecurity/service/AuthService.class
 com/websystique/springsecurity/configuration/SecurityConfig.class
+com/websystique/springsecurity/tasks/DeliveryByCriteria.class
 com/websystique/springsecurity/configuration/SecurityWebApplicationInitializer.class
 com/websystique/springsecurity/configuration/MyBatisConfig.class
 com/websystique/springsecurity/configuration/SpringMvcInitializer.class

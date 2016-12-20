@@ -44,8 +44,7 @@ public class VKApiService {
         StringBuilder sb = new StringBuilder();
         for (int c; (c = in.read()) >= 0;)
         sb.append((char)c);
-        String response = sb.toString();//ответ от сервера
         //состояние отправки
-        return (!response.contains("error"));
+        return (!sb.toString().contains("error"));
     }    
 }
