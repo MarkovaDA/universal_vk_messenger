@@ -29,8 +29,8 @@ public class CustomUserDetailsService implements UserDetailsService{
 	@Transactional(readOnly=true)
 	public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
 		User user = userService.findByLogin(login);
-                System.out.println("Login: " +login);
-		System.out.println("User : "+user);
+                System.out.println("LOGIN: " +login);
+         
 		if(user==null){
                     System.out.println("User not found");
                     throw new UsernameNotFoundException("Username not found"); 
@@ -42,6 +42,7 @@ public class CustomUserDetailsService implements UserDetailsService{
 
 	private List<GrantedAuthority> getGrantedAuthorities(User user){
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();	
+                System.out.println("ROLE:" + dataBaseMapper.roleByLogin(user.getLogin()));
                 authorities.add(new SimpleGrantedAuthority(dataBaseMapper.roleByLogin(user.getLogin())));
 		return authorities;
 	}	

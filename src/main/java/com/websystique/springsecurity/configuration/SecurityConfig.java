@@ -52,17 +52,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
               
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-            http.csrf().disable();
-          
+            http.csrf().disable();        
             http.authorizeRequests()
-	  	.antMatchers("/", "/home", "/api/**").permitAll()
-	  	.antMatchers("/admin/**","/newuser").access("hasRole('ADMIN')")
-                .antMatchers("/user/**").access("hasRole('LECT')")
-                .antMatchers("/entrance","/entrance/**").hasAnyRole("ADMIN","LECT","ADRESAT") 
-                //.and().formLogin().loginPage("/login")
-	  	.and().formLogin().loginProcessingUrl("/login")
-	  	.usernameParameter("login")
-                .passwordParameter("password")
-	  	.and().exceptionHandling().accessDeniedPage("/Access_Denied");  
+            .antMatchers("/admin/**", "/**").hasAuthority("ADMIN")
+            //.and().formLogin().loginPage("/login")
+            .and().formLogin().loginProcessingUrl("/login") //сделать свою форму авторизации
+            .usernameParameter("login")
+            .passwordParameter("password")
+            .and().exceptionHandling().accessDeniedPage("/Access_Denied");  
 	}
 }
