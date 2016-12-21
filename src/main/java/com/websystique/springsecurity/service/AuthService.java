@@ -6,7 +6,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 
 public class AuthService {
-    
+    //получение текущего авторизованного пользователя
     public static User getCurrentUser(UserService service)
     {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();

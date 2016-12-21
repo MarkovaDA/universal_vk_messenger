@@ -35,7 +35,7 @@ public class TaskPull {
             trigger.setName("T1");
             trigger.setCronExpression("0 0/1 * 1/1 * ?");
             scheduler.scheduleJob(details, trigger);
-            scheduler.start();            
+            //scheduler.start();   - остановка тесков,чтобы не мешали работать         
         }
         catch(SchedulerException e){
             System.out.println("SCHEDULER EXCEPTION");

@@ -8,9 +8,7 @@ import org.quartz.JobKey;
 
 
 public class Task implements Job {
-    //условно рассчитать каждый класс под свой тип пользователей
-    //прогружаем все критерии пользователя
-    //по каждому критерию отсылать двадцать сообщений
+    
     @Override
     public void execute(JobExecutionContext jec) throws JobExecutionException {
         //JobKey key = jec.getJobDetail().getKey();
