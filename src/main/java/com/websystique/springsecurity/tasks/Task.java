@@ -8,7 +8,7 @@ import org.quartz.JobKey;
 
 
 public class Task implements Job {
-    
+    //придется пернести не в вебку а в консольное 
     @Override
     public void execute(JobExecutionContext jec) throws JobExecutionException {
         //JobKey key = jec.getJobDetail().getKey();

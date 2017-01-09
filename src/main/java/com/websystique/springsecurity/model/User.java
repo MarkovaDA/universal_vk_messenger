@@ -1,10 +1,30 @@
 package com.websystique.springsecurity.model;
 
+import java.util.Date;
+
 
 public class User {
     String login;
     String password;
     String status;
+    String access_token;
+    Date last_date;
+
+    public Date getLast_date() {
+        return last_date;
+    }
+
+    public void setLast_date(Date last_date) {
+        this.last_date = last_date;
+    }
+
+    public String getAccess_token() {
+        return access_token;
+    }
+
+    public void setAccess_token(String access_token) {
+        this.access_token = access_token;
+    }
 
     public String getStatus() {
         return status;
@@ -14,8 +34,6 @@ public class User {
         this.status = status;
     }
 
-    
-    
     public String getLogin() {
         return login;
     }

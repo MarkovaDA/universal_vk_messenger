@@ -8,8 +8,10 @@
     </head>
     <body>
         <h1>Admin page</h1>
-        <a href="https://oauth.vk.com/authorize?client_id=5786702&display=page&redirect_uri=https://oauth.vk.com/blank.html&scope='offline,messages'&response_type=token&v=5.37">
+        <!--<a href="https://oauth.vk.com/authorize?client_id=5786702&display=page&redirect_uri=https://oauth.vk.com/blank.html&scope='offline,messages'&response_type=token&v=5.37">
             Получить ключ
-        </a>
+        </a>--> 
+        <p>Для продолжения, нужно пройти авторизацию в "Вконтакте"</p>
+        <a href="auth_vk">авторизация</a>
     </body>
 </html>

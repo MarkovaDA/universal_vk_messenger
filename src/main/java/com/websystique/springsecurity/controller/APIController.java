@@ -1,0 +1,51 @@
+package com.websystique.springsecurity.controller;
+
+import com.websystique.springsecurity.dto.VKObjectDTO;
+import com.websystique.springsecurity.service.AuthService;
+import com.websystique.springsecurity.service.UserServiceImpl;
+import com.websystique.springsecurity.service.VKApiService;
+import java.io.IOException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+
+@RestController
+public class APIController {
+    @Autowired
+    VKApiService vkService;
+    
+    @GetMapping(value="api/get_cities")
+    public List<VKObjectDTO> getCities(@RequestParam("token")String accessToken){
+        try {
+            return vkService.getCities(accessToken);
+        } catch (IOException ex) {
+            Logger.getLogger(APIController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+    
+    @GetMapping(value="api/get_universities")
+    public List<VKObjectDTO> getUniversities(@RequestParam("token")String accessToken){
+        try {
+            return vkService.getUniversities(42, accessToken);
+        } catch (IOException ex) {
+            Logger.getLogger(APIController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+    
+    @GetMapping(value="api/get_faculties")
+    public List<VKObjectDTO> getFaculties(@RequestParam("token")String accessToken){
+        try {
+            return vkService.getFaculties(1,accessToken);
+        } catch (IOException ex) {
+            Logger.getLogger(APIController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }  
+}

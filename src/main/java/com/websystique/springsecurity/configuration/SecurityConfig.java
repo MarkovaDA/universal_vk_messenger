@@ -54,7 +54,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	protected void configure(HttpSecurity http) throws Exception {
             http.csrf().disable();        
             http.authorizeRequests()
-            .antMatchers("/admin/**", "/**").hasAuthority("ADMIN")
+            .antMatchers("/admin/**", "/**", "/tools/**", "/auth_vk/**").hasAuthority("ADMIN")
             //.and().formLogin().loginPage("/login")
             .and().formLogin().loginProcessingUrl("/login") //сделать свою форму авторизации
             .usernameParameter("login")
