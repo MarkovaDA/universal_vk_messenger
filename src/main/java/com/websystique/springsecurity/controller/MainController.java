@@ -36,13 +36,16 @@ public class MainController {
     private final String redirectUri = "http://localhost:8080/vk_messanger/tools";
     
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
-    public ModelAndView adminPage(ModelMap model) {
+    public ModelAndView adminPage(ModelMap model, final RedirectAttributes redirectAttributes) {
         User currentUser = AuthService.getCurrentUser(userService);
-        String accessToken = currentUser.getAccess_token();  
+        String accessToken = currentUser.getAccess_token(); 
+        
         long difference = (((new Date()).getTime() - currentUser.getLast_date().getTime()) 
                  / (1000 * 60 * 60 * 24));
-        if (accessToken != null && difference < 1)//ключ доступа активный
-            return new ModelAndView("redirect:/tools_options");
+        if (accessToken != null && difference < 1) {//ключ доступа активный
+            redirectAttributes.addFlashAttribute("token", accessToken);
+            return new ModelAndView("redirect:/tools_options");      
+        }
         return new ModelAndView("admin");
     }
     @RequestMapping(value = "/auth_vk", method = RequestMethod.GET)
@@ -53,8 +56,7 @@ public class MainController {
     }
 
     @GetMapping(value = "/tools")
-    public ModelAndView getAccessTokenPage(@RequestParam("code")String code,
-			final RedirectAttributes redirectAttributes){
+    public ModelAndView getAccessTokenPage(@RequestParam("code")String code,final RedirectAttributes redirectAttributes){
         User currentUser = AuthService.getCurrentUser(userService);
         String accessToken = "";
         try {
@@ -73,8 +75,16 @@ public class MainController {
     
     @GetMapping(value = "/tools_options")
     public ModelAndView getToolPage(@ModelAttribute("token")String token, Model model){
-        //когда будут запросы различные к городам и т.п. 
         //если истек ключ доступа,редеректить на страницу входа
+        User currentUser = AuthService.getCurrentUser(userService);
+        if (token == null || token.length()==0) //страница была обновлена без непосредственного редиректа
+            token = currentUser.getAccess_token();
+        //проверить token на просроченность и здесь
+        long difference = (((new Date()).getTime() - currentUser.getLast_date().getTime()) 
+                 / (1000 * 60 * 60 * 24));
+        if (difference >= 1)//токен просроченный
+            return new ModelAndView("redirect:/admin");
+        
         model.addAttribute("accessToken", token);
         try {
             model.addAttribute("cities", vkService.getCities(token));

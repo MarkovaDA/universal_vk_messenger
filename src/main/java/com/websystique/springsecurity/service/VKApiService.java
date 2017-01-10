@@ -6,7 +6,6 @@ import com.websystique.springsecurity.model.AccessTokenObject;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -47,7 +46,7 @@ public class VKApiService extends HTTPService{
         return String.format(queryFormat, cityId, accessToken);
     }  
     private  String getQueryForCities(String accessToken){
-        String queryFormat = "https://api.vk.com/method/database.getCities?country_id=1&v=5.60&access_token=%s";
+        String queryFormat = "https://api.vk.com/method/database.getCities?country_id=1&сount=50&v=5.60&access_token=%s";
         return String.format(queryFormat, accessToken);
     }
     public String getAccessToken(String clientId, String clientSecret,String redirectUri,String code) throws MalformedURLException, ProtocolException, IOException{

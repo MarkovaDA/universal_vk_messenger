@@ -1,8 +1,7 @@
 package com.websystique.springsecurity.controller;
 
 import com.websystique.springsecurity.dto.VKObjectDTO;
-import com.websystique.springsecurity.service.AuthService;
-import com.websystique.springsecurity.service.UserServiceImpl;
+
 import com.websystique.springsecurity.service.VKApiService;
 import java.io.IOException;
 import java.util.List;
@@ -30,9 +29,10 @@ public class APIController {
     }
     
     @GetMapping(value="api/get_universities")
-    public List<VKObjectDTO> getUniversities(@RequestParam("token")String accessToken){
+    public List<VKObjectDTO> getUniversities(@RequestParam("token")String accessToken,
+            @RequestParam("city_id")int cityId){
         try {
-            return vkService.getUniversities(42, accessToken);
+            return vkService.getUniversities(cityId, accessToken);
         } catch (IOException ex) {
             Logger.getLogger(APIController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -40,9 +40,10 @@ public class APIController {
     }
     
     @GetMapping(value="api/get_faculties")
-    public List<VKObjectDTO> getFaculties(@RequestParam("token")String accessToken){
+    public List<VKObjectDTO> getFaculties(@RequestParam("token")String accessToken,
+            @RequestParam("univ_id")int univId){
         try {
-            return vkService.getFaculties(1,accessToken);
+            return vkService.getFaculties(univId,accessToken);
         } catch (IOException ex) {
             Logger.getLogger(APIController.class.getName()).log(Level.SEVERE, null, ex);
         }

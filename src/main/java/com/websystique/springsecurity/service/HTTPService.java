@@ -55,6 +55,7 @@ public class HTTPService {
     
      //общий вид GET-запроса к вк-апи
     protected  List<VKObjectDTO> doGETQuery(String query) throws MalformedURLException, ProtocolException, IOException{
+        System.out.println("ЗАПРОС:" + query);
         URL obj = new URL(query);
         HttpURLConnection connection = (HttpURLConnection)obj.openConnection();
         connection.setRequestMethod("GET");
