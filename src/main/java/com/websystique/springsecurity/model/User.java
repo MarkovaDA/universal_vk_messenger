@@ -4,6 +4,7 @@ import java.util.Date;
 
 
 public class User {
+    int id;
     String login;
     String password;
     String status;
@@ -13,7 +14,13 @@ public class User {
     public Date getLast_date() {
         return last_date;
     }
-
+    
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }   
     public void setLast_date(Date last_date) {
         this.last_date = last_date;
     }

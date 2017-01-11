@@ -1,7 +1,6 @@
 package com.websystique.springsecurity.controller;
 
 import com.websystique.springsecurity.dto.VKObjectDTO;
-
 import com.websystique.springsecurity.service.VKApiService;
 import java.io.IOException;
 import java.util.List;

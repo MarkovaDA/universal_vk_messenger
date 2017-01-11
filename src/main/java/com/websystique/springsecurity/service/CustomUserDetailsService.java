@@ -1,7 +1,6 @@
 package com.websystique.springsecurity.service;
 
 
-import com.websystique.springsecurity.mapper.DataBaseMapper;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +13,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.websystique.springsecurity.model.User;
+import com.websystique.springsecurity.mapper.DBMapper;
 
 
 @Service("customUserDetailsService")
@@ -23,7 +23,7 @@ public class CustomUserDetailsService implements UserDetailsService{
     private UserServiceImpl userService; //UserServiceImpl
 
     @Autowired
-    private DataBaseMapper dataBaseMapper;
+    private DBMapper dataBaseMapper;
 
     //получение информации об авторизованном пользователе
     @Transactional(readOnly=true)

@@ -1,7 +1,6 @@
 package com.websystique.springsecurity.service;
 
 import com.websystique.springsecurity.model.User;
-import java.util.Date;
 
 
 

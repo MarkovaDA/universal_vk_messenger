@@ -1,3 +1,4 @@
+/home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/mapper/DBMapper.java
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/service/CustomUserDetailsService.java
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/service/AuthService.java
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/service/UserServiceImpl.java
@@ -5,12 +6,12 @@
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/configuration/SecurityConfig.java
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/configuration/HelloWorldConfiguration.java
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/configuration/SecurityWebApplicationInitializer.java
+/home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/model/AdresatCriteria.java
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/dto/VKObjectDTO.java
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/model/User.java
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/configuration/MyBatisConfig.java
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/tasks/TaskPull.java
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/controller/APIController.java
-/home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/mapper/DataBaseMapper.java
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/service/HTTPService.java
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/configuration/SpringMvcInitializer.java
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/service/VKApiService.java

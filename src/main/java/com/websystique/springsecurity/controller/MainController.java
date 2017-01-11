@@ -1,6 +1,8 @@
 
 package com.websystique.springsecurity.controller;
 
+import com.websystique.springsecurity.mapper.DBMapper;
+import com.websystique.springsecurity.model.AdresatCriteria;
 import com.websystique.springsecurity.model.User;
 import com.websystique.springsecurity.service.AuthService;
 import com.websystique.springsecurity.service.UserService;
@@ -16,12 +18,14 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 
 @Controller
 public class MainController {
@@ -30,6 +34,9 @@ public class MainController {
     
     @Autowired
     UserService userService;
+    
+    @Autowired
+    DBMapper dbMapper;
      
     private final String clientId = "5801227";
     private final String clientSecret = "kzErha5eVdhBsKWJMcJ1";
@@ -92,5 +99,15 @@ public class MainController {
             Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
         }
         return new ModelAndView("tools");
-    }  
+    }
+    
+    @PostMapping(value = "/save_criteria")
+    @ResponseBody
+    public String saveCriteria(@RequestBody AdresatCriteria criteria){
+        //сохранение критерия в базу
+        User currentUser = AuthService.getCurrentUser(userService);    
+        dbMapper.saveCriteria(criteria.toString(),0, currentUser.getId());
+        dbMapper.saveMessageForCriteria(dbMapper.lastInsertedCriteriaId(), criteria.getMessage());
+        return "ok";
+    }
 }
