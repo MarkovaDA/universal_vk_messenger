@@ -23,19 +23,18 @@ public class TaskPull {
         SchedulerFactory schedFact = new org.quartz.impl.StdSchedulerFactory();
         Scheduler scheduler;
         try{
-            //назначить несколько тесков по числу юзеров динамически
             scheduler = schedFact.getScheduler();
-            JobDetail details;
-            details = JobBuilder.newJob(Task.class)
-                      .usingJobData("login", "markova_d_a")
+            //запуск теска,управляющего тесками критериев 
+            JobDetail details = JobBuilder.newJob(Task.class)
+                    //.usingJobData("login", "markova_d_a")
                     //.withDescription("something")
-                    //.withIdentity("mejob","myGroup")
+                    .withIdentity("criteriaMainTask","vkJobTask")
                     .storeDurably(true).build();
             CronTriggerImpl trigger = new CronTriggerImpl();
             trigger.setName("T1");
-            trigger.setCronExpression("0 0/1 * 1/1 * ?");
-            scheduler.scheduleJob(details, trigger);
-            //scheduler.start();   - остановка тесков,чтобы не мешали работать         
+            trigger.setCronExpression("0 0/1 * 1/1 * ?"); //раз в минуту просмотр тесков на обновление. Можно поставить раз в сутки,думаю
+            scheduler.scheduleJob(details, trigger);      
+            //scheduler.start();         
         }
         catch(SchedulerException e){
             System.out.println("SCHEDULER EXCEPTION");

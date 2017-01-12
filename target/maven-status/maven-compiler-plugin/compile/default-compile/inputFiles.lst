@@ -8,6 +8,7 @@
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/configuration/SecurityWebApplicationInitializer.java
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/model/AdresatCriteria.java
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/dto/VKObjectDTO.java
+/home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/tasks/TaskCriteria.java
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/model/User.java
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/configuration/MyBatisConfig.java
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/tasks/TaskPull.java

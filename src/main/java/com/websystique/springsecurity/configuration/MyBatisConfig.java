@@ -14,7 +14,7 @@ public class MyBatisConfig {
             BasicDataSource dataSource = new BasicDataSource();
             dataSource.setDriverClassName("com.mysql.jdbc.Driver");           
             dataSource.setUsername("dasha");
-            dataSource.setUrl("jdbc:mysql://vps1.vistar.su:3306/vk_messenger");
+            dataSource.setUrl("jdbc:mysql://vps1.vistar.su:3306/vk_messenger?useUnicode=yes&amp;characterEncoding=UTF-8");
             dataSource.setPassword("dasha");
             return dataSource;
     }

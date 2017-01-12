@@ -5,6 +5,7 @@ com/websystique/springsecurity/model/User.class
 com/websystique/springsecurity/tasks/Task.class
 com/websystique/springsecurity/service/HTTPService$1.class
 com/websystique/springsecurity/service/HTTPService.class
+com/websystique/springsecurity/tasks/TaskCriteria.class
 com/websystique/springsecurity/configuration/SecurityConfig.class
 com/websystique/springsecurity/mapper/DBMapper.class
 com/websystique/springsecurity/tasks/TaskPull.class

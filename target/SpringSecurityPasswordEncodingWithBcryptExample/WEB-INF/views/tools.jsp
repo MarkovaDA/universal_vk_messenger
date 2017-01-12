@@ -23,13 +23,13 @@
         </select>
         <input type="hidden" value="${accessToken}" id="token_field">
         <br><br>
-        <input type="number" id="year_field" placeholder="год выпуска" min="1980" max="2030" step="1" value="2015"></input>
+        <input type="number" id="year_field" placeholder="год выпуска" min="1980" max="2030" step="1" ></input>
         <br><br>
         <span>возраст</span>
         <br><br>
-        <span>от </span><input type="number" id="age_from_field" min="18" max="50" step="1" value="20"></input>
+        <span>от </span><input type="number" id="age_from_field" min="18" max="50" step="1"></input>
         <br><br>
-        <span>до </span><input type="number" id="age_to_field" min="18" max="50" step="1" value="20"></input>
+        <span>до </span><input type="number" id="age_to_field" min="18" max="50" step="1"></input>
         <br><br>
         <textarea placeholder="профессия" id="job_field"></textarea>
         <br><br>
@@ -94,7 +94,7 @@
                     'dataType': 'json',
                     'success': function(data){
                         console.log(data);
-                    }
+                     }
                 });
             });
         });

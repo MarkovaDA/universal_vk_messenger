@@ -110,4 +110,6 @@ public class MainController {
         dbMapper.saveMessageForCriteria(dbMapper.lastInsertedCriteriaId(), criteria.getMessage());
         return "ok";
     }
+    //https://api.vk.com/method/database.getFaculties?university_id=1024&v=5.60
+    //&access_token=bf2716301a72a4b7ab9783fecc4e1bf5844a8adc5e4a3362340b8389bf9998d8f8fe9665326e937689a41
 }
