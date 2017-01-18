@@ -1,6 +1,7 @@
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/mapper/DBMapper.java
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/service/CustomUserDetailsService.java
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/service/AuthService.java
+/home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/service/JDBCFactory.java
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/service/UserServiceImpl.java
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/util/QuickPasswordEncodingGenerator.java
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/configuration/SecurityConfig.java
@@ -14,6 +15,7 @@
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/tasks/TaskPull.java
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/controller/APIController.java
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/service/HTTPService.java
+/home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/service/CriteriaService.java
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/configuration/SpringMvcInitializer.java
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/service/VKApiService.java
 /home/darya/NetBeansProjects/vk_messenger/src/main/java/com/websystique/springsecurity/service/UserService.java

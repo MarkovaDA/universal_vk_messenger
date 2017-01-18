@@ -6,8 +6,9 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+import org.springframework.transaction.annotation.Transactional;
 
-
+@Transactional("mainManager")
 public interface DBMapper {
     
     @Select("select * from vk_messenger.users where login=#{login}")
@@ -29,7 +30,6 @@ public interface DBMapper {
     void saveMessageForCriteria(@Param("criteria_id")int criteriaId, @Param("text")String message);
     
     @Select("select LAST_INSERT_ID()")
-    int lastInsertedCriteriaId();
-    
+    Integer lastInsertedCriteriaId();
     //переделать запрос на только с объектом, а объект обновлять из кода
 }

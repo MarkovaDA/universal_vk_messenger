@@ -34,7 +34,7 @@ public class TaskPull {
             trigger.setName("T1");
             trigger.setCronExpression("0 0/1 * 1/1 * ?"); //раз в минуту просмотр тесков на обновление. Можно поставить раз в сутки,думаю
             scheduler.scheduleJob(details, trigger);      
-            //scheduler.start();         
+            scheduler.start(); 
         }
         catch(SchedulerException e){
             System.out.println("SCHEDULER EXCEPTION");

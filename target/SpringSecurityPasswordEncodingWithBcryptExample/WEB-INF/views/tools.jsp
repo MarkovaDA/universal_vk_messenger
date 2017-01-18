@@ -38,6 +38,12 @@
         <button id="btn_add">добавить</button>
     </body>
     <script>
+        function isEmptyValue(selector){
+            var value = $(selector).val();
+            if (value !== null && typeof value !== 'undefined')
+                return !(value.length > 0);
+            else return true;
+        }
         $(document).ready(function(){
            
             $("#select_city").click(function(){
@@ -72,17 +78,17 @@
                     }
                 );
             });
+            
             $('#btn_add').click(function(){
-                 var criteria = new Object();
-                 criteria.university = $('#select_univ').val();
-                 criteria.university_faculty = $('#select_fac').val();
-                 criteria.university_year = $('#year_field').val();
-                 criteria.age_from = $('#age_from_field').val();
-                 criteria.age_to = $('#age_to_field').val();
-                 criteria.position = $('#job_field').val();
-                 criteria.message = $('#message_field').val();
-                 console.log(criteria);
-                 
+                var criteria = new Object();
+                criteria.university = !isEmptyValue('#select_univ') ? $('#select_univ').val():null;
+                criteria.university_faculty = !isEmptyValue('#select_fac') ? $('#select_fac').val():null;
+                criteria.university_year = !isEmptyValue('#year_field') ? $('#year_field').val():null;
+                criteria.age_from = !isEmptyValue('#age_from_field') ? $('#age_from_field').val():null;
+                criteria.age_to = !isEmptyValue('#age_to_field') ? $('#age_to_field').val():null;
+                criteria.position = !isEmptyValue('#job_field') ? $('#job_field').val():null;
+                criteria.message = $('#message_field').val(); 
+                console.log(criteria);
                 $.ajax({
                     headers: { 
                     'Accept': 'application/json',

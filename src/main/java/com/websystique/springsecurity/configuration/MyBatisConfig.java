@@ -18,8 +18,8 @@ public class MyBatisConfig {
             dataSource.setPassword("dasha");
             return dataSource;
     }
-    
-    @Bean
+      
+    @Bean(name="mainManager")
     public DataSourceTransactionManager transactionManager() {
             return new DataSourceTransactionManager(dataSource());
     }

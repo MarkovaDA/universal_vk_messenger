@@ -1,7 +1,6 @@
 package com.websystique.springsecurity.tasks;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 import org.quartz.Job;
 import org.quartz.JobDataMap;
 import org.quartz.JobExecutionContext;
@@ -14,7 +13,7 @@ public class TaskCriteria implements Job{
     public void execute(JobExecutionContext jec) throws JobExecutionException {
         //разобраться и выключить задачу, после того,как все люди будут вытащены
         JobDataMap dataMap = jec.getJobDetail().getJobDataMap();
-        System.out.println(dataMap.getString("taskName") + ": активен");
+        System.out.println(dataMap.getString("criteriaId") + ": критерий");
     }
     
 }

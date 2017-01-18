@@ -82,7 +82,7 @@ public class MainController {
     
     @GetMapping(value = "/tools_options")
     public ModelAndView getToolPage(@ModelAttribute("token")String token, Model model){
-        //если истек ключ доступа,редеректить на страницу входа
+        //если истек ключ доступа,редеректить на страницу входа      
         User currentUser = AuthService.getCurrentUser(userService);
         if (token == null || token.length()==0) //страница была обновлена без непосредственного редиректа
             token = currentUser.getAccess_token();
@@ -105,7 +105,7 @@ public class MainController {
     @ResponseBody
     public String saveCriteria(@RequestBody AdresatCriteria criteria){
         //сохранение критерия в базу
-        User currentUser = AuthService.getCurrentUser(userService);    
+        User currentUser = AuthService.getCurrentUser(userService); 
         dbMapper.saveCriteria(criteria.toString(),0, currentUser.getId());
         dbMapper.saveMessageForCriteria(dbMapper.lastInsertedCriteriaId(), criteria.getMessage());
         return "ok";

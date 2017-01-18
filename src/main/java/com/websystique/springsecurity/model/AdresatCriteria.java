@@ -6,51 +6,51 @@ import java.util.Map;
 
 
 public class AdresatCriteria {
-    private int university;
-    private int university_faculty;
-    private int university_year;
-    private int age_from;
-    private int age_to;
+    private Integer university;
+    private Integer university_faculty;
+    private Integer university_year;
+    private Integer age_from;
+    private Integer age_to;
     private String position; //должность
     private String message; //сообщение
 
-    public int getUniversity() {
+    public Integer getUniversity() {
         return university;
     }
 
-    public void setUniversity(int university) {
+    public void setUniversity(Integer university) {
         this.university = university;
     }
 
-    public int getUniversity_faculty() {
+    public Integer getUniversity_faculty() {
         return university_faculty;
     }
 
-    public void setUniversity_faculty(int university_faculty) {
+    public void setUniversity_faculty(Integer university_faculty) {
         this.university_faculty = university_faculty;
     }
 
-    public int getUniversity_year() {
+    public Integer getUniversity_year() {
         return university_year;
     }
 
-    public void setUniversity_year(int university_year) {
+    public void setUniversity_year(Integer university_year) {
         this.university_year = university_year;
     }
 
-    public int getAge_from() {
+    public Integer getAge_from() {
         return age_from;
     }
 
-    public void setAge_from(int age_from) {
+    public void setAge_from(Integer age_from) {
         this.age_from = age_from;
     }
 
-    public int getAge_to() {
+    public Integer getAge_to() {
         return age_to;
     }
 
-    public void setAge_to(int age_to) {
+    public void setAge_to(Integer age_to) {
         this.age_to = age_to;
     }
 
@@ -73,18 +73,23 @@ public class AdresatCriteria {
     @Override
     public String toString() {
         Map<String,String> params = new HashMap<>();
-        params.put("university", Integer.toString(university));
-        params.put("university_faculty", Integer.toString(university_faculty));
-        params.put("university_year", Integer.toString(university_year));
-        params.put("age_from", Integer.toString(age_from));
-        params.put("age_to", Integer.toString(age_to));
-        params.put("position", position);
+        if (university != null)
+            params.put("university", Integer.toString(university));
+        if (university_faculty != null)
+            params.put("university_faculty", Integer.toString(university_faculty));
+        if (university_year != null)
+            params.put("university_year", Integer.toString(university_year));
+        if (age_from != null)
+            params.put("age_from", Integer.toString(age_from));
+        if (age_to != null)
+            params.put("age_to", Integer.toString(age_to));
+        if (position != null)
+            params.put("position", position);
         String criteria = "";
         Iterator iterator = params.entrySet().iterator();
-        while (iterator.hasNext()) {
+        while(iterator.hasNext()) {
             Map.Entry pair = (Map.Entry)iterator.next();
-            if (pair.getValue() != null) //не учитываем неустановленные параметры
-            criteria+=pair.getKey() + " = " + pair.getValue();
+            criteria+=pair.getKey() + "=" + pair.getValue() + "&";
         }
         return criteria;
         //return  "university=" + university + "&university_faculty=" + university_faculty + "&university_year=" + university_year + "&age_from=" + age_from + "&age_to=" + age_to + "&position=" + position;
